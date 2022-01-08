@@ -1,0 +1,29 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Type d'Instrument:</h2>
+    </div>
+    <form >
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID de Type</label>
+        <input hidden type="number" [(ngModel)]="newType.idType"
+        name="idType" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom de Type</label>
+        <input type="text"[(ngModel)]= "newType.nomType"
+        name="nomType" class="form-control">
+        </div> 
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label >Date de création de Type</label>
+            <input type="date"[(ngModel)]= "newType.dateCreation"
+            name="dateCreation" class="form-control">
+            </div> 
+        <div class="mt-2">
+        <button type="submit" (click)="addType()" class="btn btn-success">Ajouter</button>
+        <div>
+           
+        </div>
+        </div>
+        </form>
+        </div>
+            

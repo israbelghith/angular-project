@@ -1,0 +1,35 @@
+<div class="container">
+    <div>
+    <h2>Modifier une Instrument :</h2>
+    </div>
+    <form [formGroup]="InstrumentForm" (submit)="updateInstrument()">
+    <div  class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Instrument</label>
+    <input readonly type="text" formControlName="idInstrument" [(ngModel)]="currentInstrument.idInstrument"
+    name="idInstrument" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Instrument</label>
+    <input type="text" formControlName="nomInstrument" [(ngModel)]= "currentInstrument.nomInstrument"
+    name="nomInstrument" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix Instrument</label>
+    <input type="number" formControlName="prixInstrument" [(ngModel)]= "currentInstrument.prixInstrument"
+    name="prixProduit" class="form-control">
+    </div>
+    <div class="mt-3">
+        <label>Marque Buggy</label>
+        <select class="form-control" id="idType" formControlName="typeInstrument" [(ngModel)]="currentInstrument.typeInstrument">
+           
+             <option selected [value]="currentInstrument.typeInstrument" value="">{{currentInstrument.typeInstrument.nomType}}</option>
+             <option [ngValue]="type" *ngFor="let type of typeList">{{type.nomType}}</option>
+
+        </select>
+    </div>
+   
+    <div class="mt-2">
+    <button type="submit" (click)="updateInstrument()" class="btn btn-success">Modifer</button>
+    </div>
+    </form>
+    </div>    
